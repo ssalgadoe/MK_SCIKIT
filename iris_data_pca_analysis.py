@@ -12,18 +12,14 @@ fig, axes = plt.subplots(nrows=2, ncols=2)
 
 pca = PCA(n_components=3)
 pca.fit(X)
-X = pca.transform(X)
+X_reduced = pca.transform(X)
+print(X[0], X_reduced[0])
+
 
 axes[0,0].scatter(X[:,0],X[:,1], c=y)
-# axes[0,0].set_xlabel(data.feature_names[0])
-# axes[0,0].set_ylabel(data.feature_names[1])
+axes[0,1].scatter(X_reduced[:,0],X_reduced[:,1], c=y)
 
-axes[0,1].scatter(X[:,0],X[:,2], c=y)
-# axes[0,1].set_xlabel(data.feature_names[0])
-# axes[0,1].set_ylabel(data.feature_names[2])
-
-axes[1,0].scatter(X[:,1],X[:,2], c=y)
-# axes[1,0].set_xlabel(data.feature_names[1])
-# axes[1,0].set_ylabel(data.feature_names[2])
+axes[1,0].scatter(X[:,0],X[:,2], c=y)
+axes[1,1].scatter(X_reduced[:,0],X_reduced[:,2], c=y)
 
 plt.show()
