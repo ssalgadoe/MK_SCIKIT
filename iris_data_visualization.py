@@ -1,14 +1,10 @@
-
-import numpy as np
-from sklearn import preprocessing, svm, neighbors
-from sklearn import datasets
-from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from sklearn.decomposition import PCA
+from sklearn.datasets import load_iris
 
+data = load_iris()
 
-data = datasets.load_iris()
+X = data.data
+y = data.target
 
 fig, axes = plt.subplots(nrows=3, ncols=2)
 
@@ -39,8 +35,3 @@ axes[2,1].set_ylabel(data.feature_names[3])
 
 
 plt.show()
-
-
-
-
-
