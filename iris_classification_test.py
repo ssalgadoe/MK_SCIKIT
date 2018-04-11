@@ -40,16 +40,16 @@ print('accuracy', correct/len(test_y))
 
 fig, axes = plt.subplots(nrows=2, ncols=2)
 
-# axes[0,0].scatter(test_x[:,0],test_x[:,1], c=accuracy)
-# axes[0,1].scatter(test_x[:,0],test_x[:,2], c=accuracy)
-# axes[1,0].scatter(test_x[:,1],test_x[:,2], c=accuracy)
-# axes[1,1].scatter(test_x[:,1],test_x[:,3], c=accuracy)
+axes[0,0].scatter(test_x[:,0],test_x[:,1], c=accuracy)
+axes[0,1].scatter(test_x[:,0],test_x[:,2], c=accuracy)
+axes[1,0].scatter(test_x[:,1],test_x[:,2], c=accuracy)
+axes[1,1].scatter(test_x[:,1],test_x[:,3], c=accuracy)
 
 
-ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=48, azim=134)
-
-ax.scatter(test_x[:,0],test_x[:,1], test_x[:,2], c=accuracy, s=50)
-ax.scatter(test_x[:,0],test_x[:,1], test_x[:,2], c=result, s=10)
+# accuracyax = Axes3D(fig, rect=[0, 0, .95, 1], elev=48, azim=134)
+#
+# ax.scatter(test_x[:,0],test_x[:,1], test_x[:,2], c=accuracy, s=50)
+# ax.scatter(test_x[:,0],test_x[:,1], test_x[:,2], c=result, s=10)
 
 plt.show()
 
