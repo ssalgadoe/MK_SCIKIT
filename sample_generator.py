@@ -1,8 +1,8 @@
 
 
 ifilename = '../data_sets/creditcard.csv'
-ofilename = '../data_sets/creditcard_sample1.csv'
-lines = 100
+ofilename = '../data_sets/creditcard_sample.csv'
+lines = 15000
 in_file= open(ifilename,'r')
 out_file= open(ofilename,'w')
 
