@@ -2,7 +2,7 @@
 
 ifilename = '../data_sets/creditcard.csv'
 ofilename = '../data_sets/creditcard_sample.csv'
-lines = 15000
+lines = 1000
 in_file= open(ifilename,'r')
 out_file= open(ofilename,'w')
 
