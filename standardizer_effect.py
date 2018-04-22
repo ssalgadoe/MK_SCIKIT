@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 from sklearn.pipeline import make_pipeline
 from sklearn.datasets import load_iris, load_wine, load_boston
 
-FIG_SIZE = (7,10)
+FIG_SIZE = (10,10)
 
 
 features, labels = load_wine(return_X_y=True)
@@ -44,12 +44,12 @@ fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=FIG_SIZE)
 for l, c, m in zip(range(0, 3), ('blue', 'red', 'green'), ('^', 's', 'o')):
     x = X_train[y_train == l, 0]
     y = X_train[y_train == l, 1]
-    ax1.scatter(x, y, color=c, marker=m, alpha=0.5)
+    ax1.scatter(x, y, color=c, marker=m, alpha=0.5, label='class %s' %l)
 
 for l, c, m in zip(range(0, 3), ('blue', 'red', 'green'), ('^', 's', 'o')):
     x = X_train_std[y_train == l, 0]
     y = X_train_std[y_train == l, 1]
-    ax2.scatter(x, y, color=c, marker=m, alpha=0.5)
+    ax2.scatter(x, y, color=c, marker=m, alpha=0.5, label='class %s' %l)
 
 ax1.set_title("Training set after PCA")
 ax2.set_title("Training set after PCA with standardizer")
@@ -58,5 +58,6 @@ for ax in (ax1, ax2):
     ax.set_xlabel('pca component 1')
     ax.set_ylabel('pca component 2')
     ax.grid()
+    ax.legend()
 
 plt.show()
